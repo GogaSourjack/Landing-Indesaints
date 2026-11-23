@@ -1,0 +1,51 @@
+{
+  "_help": "Parede: songs[] com title, aside, youtubeId (vazio se ainda não tem clipe) e, sem vídeo, still + stillAlt. Setlist de palco (/setlist): stage[] só com title. A polaroide do chão (setlist-chao.webp, legenda 'a de verdade, caída no chão') fica para sempre, mesmo quando a lista crescer. Foto nova: arquivo em public/media e o caminho aqui.",
+  "name": "indeSaints",
+  "tag": "O Rock'n LOL Brasileiro",
+  "instagram": "https://www.instagram.com/indesaints/",
+  "instagramLabel": "@indesaints",
+  "logoNote": "rock, hardcore e falta de maturidade",
+  "showNote": "humor de 5ª série, rock e hardcore.",
+  "contactNote": "@ indesaints - Chama no Instagram",
+  "pressHref": "/press/press-release.pdf",
+  "pressLabel": "folha grampeada — press release",
+  "bio": [
+    "A banda brasileira indeSaints continua surpreendendo com sua mistura única de rock, hardcore e humor contagiante. Batizados com o estilo “Rock'n LOL”, o grupo conquista fãs com letras irreverentes e cativantes, abordando situações do cotidiano de forma leve e divertida.",
+    "Entre as músicas mais recentes lançadas estão os hits Paixão de Vintão, Fio Cheiroso, Hot Dog e Biscoito, que mantêm a essência criativa da banda enquanto exploram novas sonoridades.",
+    "Com um som enérgico, letras e rifes marcantes, o indeSaints vem ganhando destaque nas plataformas e nos palcos. Música e humor no mesmo ambiente."
+  ],
+  "songs": [
+    {
+      "title": "Paixão de Vintão",
+      "aside": "balada pra se apaixonar perdidamente. essa tem play.",
+      "youtubeId": "fmMiQyz8dng"
+    },
+    {
+      "title": "Fio Cheiroso",
+      "aside": "clipe filmado. no youtube, ainda não.",
+      "youtubeId": "",
+      "still": "/media/guitarra.webp",
+      "stillAlt": "Guitarrista de boné sob luz rosa e vermelha, no Cerveja Azul"
+    },
+    {
+      "title": "Hot Dog",
+      "aside": "entra quente. o play público também não chegou.",
+      "youtubeId": "",
+      "still": "/media/baixo.webp",
+      "stillAlt": "Baixista encostado numa parede verde, luz de palco"
+    },
+    {
+      "title": "Biscoito",
+      "aside": "tem teaser antigo e master no drive. aqui o rasgo fica mudo.",
+      "youtubeId": "",
+      "still": "/media/bateria.webp",
+      "stillAlt": "Baterista de camiseta clara, luz verde no rosto"
+    }
+  ],
+  "stage": [
+    { "title": "Paixão de Vintão" },
+    { "title": "Fio Cheiroso" },
+    { "title": "Hot Dog" },
+    { "title": "Biscoito" }
+  ]
+}

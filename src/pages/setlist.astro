@@ -1,0 +1,32 @@
+---
+import "../styles/stage.css";
+import band from "../content/band.json";
+---
+
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Setlist — indeSaints</title>
+    <meta name="description" content="Setlist da indeSaints, em texto, pra seguir no celular." />
+  </head>
+  <body>
+    <main class="sheet">
+      <a class="back" href="/">indeSaints</a>
+      <h1>setlist</h1>
+      <p class="lead">a ordem pra seguir no celular.</p>
+      <ol>
+        {
+          band.stage.map((song, index) => (
+            <li>
+              <span class="num">{String(index + 1).padStart(2, "0")}</span>
+              <span class="title">{song.title}</span>
+            </li>
+          ))
+        }
+      </ol>
+    </main>
+  </body>
+</html>

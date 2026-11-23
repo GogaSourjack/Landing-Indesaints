@@ -1,0 +1,187 @@
+---
+import "../styles/sheet.css";
+import band from "../content/band.json";
+
+const scraps = [
+  {
+    src: "/media/banda.webp",
+    alt: "A banda inteira no palco do Cerveja Azul, luz roxa",
+    caption: "cerveja azul, 2019",
+    width: 1600,
+    height: 1066,
+    className: "scrap-banda",
+  },
+  {
+    src: "/media/pose.webp",
+    alt: "Os quatro juntos fazendo pose no palco",
+    caption: "a pose obrigatória",
+    width: 1600,
+    height: 1066,
+    className: "scrap-pose",
+  },
+];
+---
+
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <title>indeSaints</title>
+    <meta name="description" content="indeSaints, o Rock'n LOL brasileiro. A setlist é o site." />
+    <link rel="canonical" href="https://indesaints.vercel.app/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:url" content="https://indesaints.vercel.app/" />
+    <meta property="og:title" content="indeSaints" />
+    <meta property="og:description" content="O Rock'n LOL brasileiro. A setlist é o site." />
+    <meta property="og:image" content="https://indesaints.vercel.app/og.jpg?v=2" />
+    <meta property="og:image:secure_url" content="https://indesaints.vercel.app/og.jpg?v=2" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Letreiro neon indeSaints" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="indeSaints" />
+    <meta name="twitter:description" content="O Rock'n LOL brasileiro. A setlist é o site." />
+    <meta name="twitter:image" content="https://indesaints.vercel.app/og.jpg?v=2" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Special+Elite&family=Yellowtail&display=swap"
+      rel="stylesheet"
+    />
+    </head>
+  <body>
+    <div class="wall">
+      <svg class="wire" viewBox="0 0 920 46" aria-hidden="true">
+        <path
+          d="M4 24 H916 M28 24 l6-10 M68 24 l6-10 M108 24 l6-10 M148 24 l6-10 M188 24 l6-10 M228 24 l6-10 M268 24 l6-10 M308 24 l6-10 M348 24 l6-10 M388 24 l6-10 M428 24 l6-10 M468 24 l6-10 M508 24 l6-10 M548 24 l6-10 M588 24 l6-10 M628 24 l6-10 M668 24 l6-10 M708 24 l6-10 M748 24 l6-10 M788 24 l6-10 M828 24 l6-10 M868 24 l6-10"
+          fill="none"
+          stroke="#d5dde6"
+          stroke-width="1.6"
+          stroke-linecap="square"
+        />
+      </svg>
+
+      <header class="sign">
+        <h1 class="neon">indeSaints</h1>
+        <p class="sign-note">{band.logoNote}</p>
+      </header>
+
+      <div class="scraps">
+        {
+          scraps.map((photo) => (
+            <figure class:list={["scrap", photo.className]}>
+              <span class="tape" aria-hidden="true" />
+              <img src={photo.src} alt={photo.alt} width={photo.width} height={photo.height} />
+              <figcaption>{photo.caption}</figcaption>
+            </figure>
+          ))
+        }
+      </div>
+
+      <div class="rig">
+        <article class="sheet" data-sheet>
+          <div class="face front">
+            <p class="kicker">{band.tag}</p>
+            <p class="hint">rasga uma linha. setas, enter, v vira a folha.</p>
+            <ol class="setlist">
+              {
+                band.songs.map((song, index) => (
+                  <li
+                    class="line"
+                    data-line
+                    data-title={song.title}
+                    data-youtube={song.youtubeId || undefined}
+                  >
+                    <button type="button" aria-expanded="false">
+                      <span class="num">{String(index + 1).padStart(2, "0")}</span>
+                      <span>
+                        <span class="song">{song.title}</span>
+                        <span class="aside">{song.aside}</span>
+                      </span>
+                      <span class="mark" aria-hidden="true">
+                        {song.youtubeId ? "▶" : "×"}
+                      </span>
+                    </button>
+                    <div class="tear" data-tear inert aria-hidden="true">
+                      <div class="tear-inner">
+                        {song.youtubeId ? (
+                          <div class="player" data-player />
+                        ) : (
+                          <figure class="still missing">
+                            <img
+                              src={song.still}
+                              alt={song.stillAlt}
+                              width="1365"
+                              height="2048"
+                            />
+                            <figcaption>sem youtube ainda. o master ficou no drive.</figcaption>
+                          </figure>
+                        )}
+                      </div>
+                    </div>
+                  </li>
+                ))
+              }
+            </ol>
+
+            {/* Fica para sempre, mesmo quando a lista de músicas crescer. */}
+            <figure class="floor-list">
+              <span class="tape" aria-hidden="true" />
+              <img
+                src="/media/setlist-chao.webp"
+                alt="Setlist de papel no chão do palco, debaixo de luz vermelha"
+                width="1600"
+                height="1066"
+              />
+              <figcaption>a de verdade, caída no chão</figcaption>
+            </figure>
+
+            <button class="flip" type="button" data-flip>virar a folha - press pelease</button>
+          </div>
+
+          <div class="face back" inert aria-hidden="true">
+            <p class="kicker">verso</p>
+            <p class="hint bio-title">bio</p>
+            {band.bio.map((paragraph) => <p class="bio">{paragraph}</p>)}
+            <a class="press-link" href={band.pressHref}>{band.pressLabel}</a>
+            <div class="back-photos">
+              <figure>
+                <img
+                  src="/media/tartarugas.webp"
+                  alt="Três da banda na frente de uma vitrine de tartarugas ninja"
+                  width="1600"
+                  height="2138"
+                />
+                <figcaption>niver do campas</figcaption>
+              </figure>
+              <figure>
+                <img
+                  src="/media/dedos.webp"
+                  alt="Os quatro apontando para a câmera"
+                  width="1600"
+                  height="2133"
+                />
+                <figcaption>ainda as tartarugas</figcaption>
+              </figure>
+            </div>
+            <button class="flip" type="button" data-flip>voltar pra setlist</button>
+          </div>
+        </article>
+      </div>
+
+      <div class="notes">
+        <a class="wall-note ig" href={band.instagram}>{band.contactNote}</a>
+        <p class="wall-note show">{band.showNote}</p>
+        <a class="wall-note stage" href="/setlist">setlist limpa — pra banda seguir no celular</a>
+      </div>
+    </div>
+
+    <script>
+      import "../scripts/setlist.ts";
+    </script>
+  </body>
+</html>

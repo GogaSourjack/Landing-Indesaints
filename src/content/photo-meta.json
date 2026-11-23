@@ -1,0 +1,50 @@
+[
+  {
+    "name": "baixo",
+    "width": 1365,
+    "height": 2048,
+    "bytes": 1259766
+  },
+  {
+    "name": "banda",
+    "width": 1600,
+    "height": 1066,
+    "bytes": 259439
+  },
+  {
+    "name": "guitarra",
+    "width": 1365,
+    "height": 2048,
+    "bytes": 602416
+  },
+  {
+    "name": "setlist-chao",
+    "width": 1600,
+    "height": 1066,
+    "bytes": 158868
+  },
+  {
+    "name": "bateria",
+    "width": 1365,
+    "height": 2048,
+    "bytes": 881449
+  },
+  {
+    "name": "pose",
+    "width": 1600,
+    "height": 1066,
+    "bytes": 269822
+  },
+  {
+    "name": "tartarugas",
+    "width": 1600,
+    "height": 2138,
+    "bytes": 263877
+  },
+  {
+    "name": "dedos",
+    "width": 1600,
+    "height": 2133,
+    "bytes": 364876
+  }
+]
